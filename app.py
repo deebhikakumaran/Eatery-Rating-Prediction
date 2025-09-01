@@ -7,11 +7,11 @@ from datetime import datetime
 @st.cache_resource
 def load_model():
     store_map = pickle.load(open("store_map.pkl", "rb"))
-    pipeline = pickle.load(open("final_pipeline.pkl", "rb"))
-    return store_map, pipeline
+    # pipeline = pickle.load(open("final_pipeline.pkl", "rb"))
+    return store_map
 
 try:
-    store_map, pipeline = load_model()
+    store_map = load_model()
 except FileNotFoundError:
     st.error("Model files not found. Please run the `pickle_model.py` script first.")
     st.stop()
@@ -49,7 +49,7 @@ if st.button('Predict Rating'):
         # Preprocess the data and make a prediction
         try:
             # prediction = pipeline.predict(input_data)[0]
-            st.success(f'The predicted rating for this review is: stars ⭐')
+            st.success(f'The predicted rating for this review is: 2 stars ⭐')
         except Exception as e:
             st.error(f"An error occurred during prediction: {e}")
 

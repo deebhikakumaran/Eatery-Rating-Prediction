@@ -4,6 +4,8 @@ This project is a machine learning solution for predicting the star rating of a 
 
 Check Live Demo: https://mcdonalds-rating-predictor.streamlit.app/
 
+![A screenshot of the McDonald's Rating Prediction app UI](screenshots/app_screenshot.png)
+
 ## Approach
 
 The solution is divided into two main components: model training and a web application for inference.
@@ -32,7 +34,7 @@ A simple web application is built using the Streamlit library to demonstrate the
 
 ## File Descriptions
 
-  * `code.py`: The script for training the model and saving the pipeline and `store_id` map.
+  * `model.py`: The script for training the model and saving the pipeline and `store_id` map.
   * `app.py`: The Streamlit web application that loads the trained model and performs predictions.
   * `train.csv`: The dataset used for training the model.
   * `test.csv`: The dataset used for evaluating the model.
@@ -51,10 +53,10 @@ A simple web application is built using the Streamlit library to demonstrate the
     ```bash
     pip install pandas numpy scikit-learn streamlit transformers torch
     ```
-3.  **Train the model:** Run the `code.py` script. This will generate the necessary `.pkl` files.
+3.  **Train the model:** Run the `model.py` script. This will generate the necessary `.pkl` files.
 
     ```bash
-    python code.py
+    python model.py
     ```
 4.  **Launch the web application:** Once the model files are generated, run the `app.py` script to start the Streamlit app.
 
